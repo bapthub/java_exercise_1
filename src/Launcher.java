@@ -47,9 +47,10 @@ public class Launcher {
                 try
                 {
                     Scanner txtFile = new Scanner(new File(s));
+
                     while (txtFile.hasNext())
                     {
-                        String word = txtFile.next();
+                        String word = txtFile.next().toLowerCase().replaceAll("[,!?;'\n.]", " ");
                         if (map.containsKey(word))
                         {
                             int count = map.get(word) + 1;
